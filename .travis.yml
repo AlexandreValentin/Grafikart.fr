@@ -1,3 +1,4 @@
+dist: buster
 services:
   - docker
 install:
