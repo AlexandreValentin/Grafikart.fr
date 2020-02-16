@@ -29,7 +29,7 @@ services:
     user: "${USER_ID}:${GROUP_ID}"
     volumes:
       - .:/usr/src/app
-      - yarn-cache:/.cache
+      - yarn-cache:/.cache/yarn:rw
     ports:
       - 8080:8080
   db:
