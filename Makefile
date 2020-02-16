@@ -11,7 +11,6 @@ help: ## Affiche cette aide
 
 .PHONY: install
 install: node_modules/time vendor/autoload.php ## Installe les différentes dépendances
-	yarn run build
 
 .PHONY: build-docker
 build-docker:
@@ -59,6 +58,6 @@ vendor/autoload.php: composer.lock
 	touch vendor/autoload.php
 
 node_modules/time: yarn.lock
-	$(dr) --no-deps node yarn
+	$(dr) --no-deps -w="/usr/src/app" node yarn
 	touch node_modules/time
 
