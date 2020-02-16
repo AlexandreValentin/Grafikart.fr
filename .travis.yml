@@ -1,6 +1,8 @@
+dist: buster
 env:
-  - NODE_RELEASE=12.x
-  - DATABASE_URL=postgresql://postgres@localhost:5432/test?serverVersion=12&charset=utf8
+  global:
+    - NODE_RELEASE=12.x
+    - DATABASE_URL=postgresql://postgres@localhost:5432/test?serverVersion=12&charset=utf8
 language: php
 php:
   - 7.4
