@@ -58,6 +58,6 @@ vendor/autoload.php: composer.lock
 	touch vendor/autoload.php
 
 node_modules/time: yarn.lock
-	$(dr) --no-deps -w="/usr/src/app" node yarn
+	$(dr) --no-deps --workdir=/usr/src/app node yarn
 	touch node_modules/time
 
