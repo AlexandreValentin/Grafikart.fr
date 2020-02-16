@@ -1,25 +1,7 @@
-dist: buster
-env:
-  global:
-    - NODE_RELEASE=12.x
-    - DATABASE_URL=postgresql://postgres@localhost:5432/test?serverVersion=12&charset=utf8
-language: php
-php:
-  - 7.4.2
 services:
   - docker
-  - postgresql
-before_install:
-  - sudo rm -rf ~/.nvm - curl -sL "https://deb.nodesource.com/setup_${NODE_RELEASE}" | sudo -E bash -
-  - sudo apt-get install -y nodejs
-  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  - sudo apt-get update && sudo apt-get install yarn
-  - echo "postgresql://postgres@localhost:5432/test?serverVersion=12&charset=utf8" >> .env.test
-  - psql -c 'create database test;' -U postgres
 install:
-  - yarn
-  - composer install
+  - make install
 script:
   - make lint
-  - vendor/bin/phpunit
+  - make test
