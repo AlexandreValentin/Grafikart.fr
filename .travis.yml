@@ -5,7 +5,7 @@ env:
     - DATABASE_URL=postgresql://postgres@localhost:5432/test?serverVersion=12&charset=utf8
 language: php
 php:
-  - 7.4
+  - 7.4.2
 services:
   - docker
   - postgresql
