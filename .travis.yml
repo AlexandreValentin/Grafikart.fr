@@ -1,4 +1,5 @@
 dist: buster
+sudo: false
 services:
   - docker
 install:
